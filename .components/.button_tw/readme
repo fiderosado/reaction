@@ -1,0 +1,61 @@
+/* estilo de un boton redondeado */
+rounded()
+Se adapta a todas las vistas de botones
+
+/* Tamaños de un Boton  */
+small()
+medium()
+larger()
+Estos pueden ser pequeños , medianos o grandes.
+
+/* estilo del boton para pantallas moviles*/
+block()
+Este estilo es conveniente cuando haces vistas estilo dispositivos moviles
+
+/*  Boton estilo deshabilitado  */
+disable(false/true)
+Por defecto viene false aunque el metodo exista
+debe ser especificada.
+
+/*  Boton estilo deshabilitado  */
+outline()
+
+/* Estilos del Boton cloreados */
+primary()
+secundary()
+danger()
+sucess()
+warning()
+info()
+light()
+dark()
+
+/*  ripple  */
+ripple()
+Esta en desarrollo para crear este
+estilo visual del boton
+
+/*  setClass */
+setClass()
+asignas un (array) de clases al objeto,
+o simplemente una sola linea (string) con las clases.
+
+/* setStyle */
+setStyle()
+asignas un (array) de estilos ('color'=>'red') al objeto,
+o simplemente una sola linea (string) con los estilos.
+
+/*  setText  */
+setText('soy un boton')
+integra un texto en el objeto,
+puede ser creado sin el.
+
+/* setId */
+setId('id')
+establece un id al objeto para ser identificado
+por funciones Javascript
+
+/* Build */
+public function build()
+Funcion de construccion del componente
+esta se llama desde el componente padre
