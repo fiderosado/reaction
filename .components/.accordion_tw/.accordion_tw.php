@@ -12,7 +12,7 @@ class accordion_tw{
     private $style=array();
     private static $instance;
     private $acord = null;
-    private $isFlush = false;
+    private $isFlush = array();
     private $argumentos;
     private $accordionClase = array('accordion');
     private $acordionFlushclases = 'accordion accordion-flush';
@@ -63,8 +63,8 @@ class accordion_tw{
     public function get_class(){
         return get_class();
     }
-    public function typeflush($is=false){
-        $this->isFlush = $is;
+    public function type($t){
+        $this->isFlush = $t;
         return self::$instance;
     }
     private function work($args){

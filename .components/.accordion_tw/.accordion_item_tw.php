@@ -16,13 +16,14 @@ class accordion_item_tw{
     private $expanded;
     private $no;
     private $fatherId;
-    private $isFlush = false;
+    private $typeac = array();
     private $argumentos;
     private $acordionItemClass = array('accordion-item bg-white border border-gray-200');
     private $acordionHeaderClass = array('accordion-header mb-0');
     private $acordionButtonClass = array('accordion-button relative flex items-center w-full py-4 px-5 text-base texto-gray-800 text-left bg-white border-0 rounded-none transition focus:outline-none font-bold');
     private $acordionColapseClass = array('accordion-collapse collapse');
     private $acordionItemFlushClases = 'border-t-0 border-l-0 border-r-0 rounded-none';
+
     public static function in(){
         //if (!isset(self::$instance)) {
             self::$instance = new self(func_get_args());
@@ -36,10 +37,16 @@ class accordion_item_tw{
     public function get_class(){
         return get_class();
     }
+
+    private function getParent($p){
+     return empty($p)?'':'data-bs-parent="#accordion_'.$p.'"';
+    }
+
     public function typeflush($is=false){
-        $this->isFlush = $is;
+        $this->typeac = $is;
         return self::$instance;
     }
+
     private function work($args){
         $b=array();
         for($i = self::off ; $i < count($args); ++$i) {
@@ -87,15 +94,40 @@ class accordion_item_tw{
     private function getStyle(){
         return (empty($this->style))? '' : ' style="'.implode(' ',$this->style).'"';
     }
+
+    private function gettype($art,$t){
+        $r = false;
+        foreach ($art as $i => $ti){
+           // echo $ti."<br>";
+            if($ti === $t) {
+                $r = true;
+            }
+        }
+        return $r;
+    }
+
     private function buildAcordionItem($title,$expanded=false ,$no,$acordionButtonClass ,$body,$fatherId ,$acordionColapseClass ,$acordionItemClass,$acordionHeaderClass){
+
         if ($expanded){
             array_push($acordionColapseClass , 'show');
         }else{
             array_push($acordionButtonClass,'collapsed');
         }
-        if ($this->isFlush){
+
+        $isflush = $this->gettype($this->typeac , 'flush');
+        $isAlwOpen = $this->gettype($this->typeac , 'always-open');
+
+        if ($isflush){
                 array_push( $acordionItemClass , $this->acordionItemFlushClases );
         }
+        if ($isAlwOpen){
+            $padre = '';
+        }else{
+            $padre = $this->getParent($fatherId);
+        }
+
+
+
         $acordionItemClass = implode(' ', $acordionItemClass);
         $acordionHeaderClass = implode(' ', $acordionHeaderClass);
         $acordionButtonClass = implode(' ',$acordionButtonClass);
@@ -106,12 +138,18 @@ class accordion_item_tw{
       <h2 class="'.$acordionHeaderClass.'" id="heading_'.$no.'">
         <button class="'.$acordionButtonClass.'" 
         type="button" data-bs-toggle="collapse"
-        data-bs-target="#collapse_'.$no.'" aria-expanded="'.$expanded.'"
+        data-bs-target="#collapse_'.$no.'" 
+        aria-expanded="'.$expanded.'"
         aria-controls="collapse_'.$no.'">
           '.$title.'
         </button>
       </h2>
-      <div id="collapse_'.$no.'" class="'.$acordionColapseClass.'" aria-labelledby="heading_'.$no.'" data-bs-parent="#accordion_'.$fatherId.'">
+      <div 
+      id="collapse_'.$no.'" 
+      class="'.$acordionColapseClass.'" 
+      aria-labelledby="heading_'.$no.'" 
+      '.$padre.'
+      >
         <div class="accordion-body py-4 px-5">
           '.$body.'
         </div>
@@ -120,7 +158,7 @@ class accordion_item_tw{
         return $ac;
     }
     public function build(){
-        $this->isFlush = func_get_args()[0];
+        $this->typeac = func_get_args()[0];
         $cl = utils::load('css',get_class());
         $this->work($this->argumentos);
         $this->body = $this->buildAcordionItem(

@@ -29,6 +29,7 @@
 
     // <script type="text/javascript" src="js/tail.min.js"></script>
 // "boostrap"=>"css/bootstrap.min.css",
+
     $app = function() use ( $head , $stylesheet ) {
         app::in(
             head::in($head),
@@ -69,7 +70,7 @@
 
                     )->setNo(3)->setId(3)->setTit('RILO')->setFatherId('ac1')
 
-                )->setId('ac1')->typeflush(false)
+                )->setId('ac1')->type(['flush','always-open'])
 
                 /*button_tw::in()*/
                 /*header::in(
