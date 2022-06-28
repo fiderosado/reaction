@@ -70,7 +70,7 @@
 
                     )->setNo(3)->setId(3)->setTit('RILO')->setFatherId('ac1')
 
-                )->setId('ac1')->type(['flush','always-open'])
+                )->setId('ac1')->type(['flush'])
 
                 /*button_tw::in()*/
                 /*header::in(

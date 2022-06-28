@@ -63,8 +63,10 @@ class accordion_tw{
     public function get_class(){
         return get_class();
     }
-    public function type($t){
-        $this->isFlush = $t;
+    public function type(){
+        if ( count(func_get_args())>0 ){
+            $this->isFlush = func_get_args()[0];
+        }
         return self::$instance;
     }
     private function work($args){
