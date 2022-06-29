@@ -1,6 +1,28 @@
 # reaction
 PHP &amp; JavaScript Framework
+##########################################
 
+Acordeon Component
+
+El acordeón utiliza la funcionalidad de colapso para hacer que se pliegue y se despliegue.
+
+Los acordeones son útiles cuando necesita organizar mucha información en un espacio limitado verticalmente. Los encabezados permiten al usuario explorar los temas principales del contenido y elegir cuál de los temas le gustaría examinar en profundidad haciendo clic en él. Es muy útil para preguntas frecuentes y formularios de contacto complejos.
+
+Flush
+
+La propiedad Flush le permite mostrar el acordeón sin el color de fondo predeterminado, los bordes y las esquinas redondeadas. También hace que se estire en todo el ancho de su contenedor principal. Es útil cuando desea incrustar el acordeón en un componente diferente, es decir, dentro de una Card or Modal.
+
+->type(['flush'])
+
+Siempre abierto
+De forma predeterminada, un elemento de acordeón se colapsará cuando haga clic en otro elemento de acordeón. Si desea cambiarlo y mantener abiertos los elementos del acordeón hasta que se haga clic en ellos explícitamente, puede cambiarlos de esta forma
+
+->type(['always-open'])
+
+Puedes usar varios tipos usando
+->type(['flush','always-open'])
+
+##########################################
 
 Avatar component
 
