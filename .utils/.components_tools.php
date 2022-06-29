@@ -19,6 +19,7 @@ class components_tools{
     }
     public function __construct(){}
     public static function searchAndDel($st,$sa=array()){
+        $ad = func_get_args();
         $are = array();
         $ak = explode(' ', ( is_array($st) )? implode( ' ', $st) : $st );
         foreach ($ak as $i => $d){
@@ -39,6 +40,7 @@ class components_tools{
                 }
             }
         }
+
         return $are;
     }
 }

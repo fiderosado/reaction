@@ -10,6 +10,7 @@
     use components\button_tw\button_tw;
     use components\accordion_tw\accordion_tw;
     use components\accordion_tw\accordion_item_tw;
+    use components\avatar_tw\avatar_tw;
 
     include '.styles/stylesheets.php';
 
@@ -35,7 +36,12 @@
             head::in($head),
             body::in(
 
-                accordion_tw::in(
+                avatar_tw::in()->type(['squared','shadow','content'])
+                    ->setTitule('Fidel')
+                    ->setDescription('Administrador')
+                    ->setImgScr('https://mdbcdn.b-cdn.net/img/new/avatars/8.webp')
+/*squared*/
+                /*accordion_tw::in(
 
                     accordion_item_tw::in(
 
@@ -70,7 +76,7 @@
 
                     )->setNo(3)->setId(3)->setTit('RILO')->setFatherId('ac1')
 
-                )->setId('ac1')->type(['flush'])
+                )->setId('ac1')*/
 
                 /*button_tw::in()*/
                 /*header::in(
@@ -87,7 +93,7 @@
                         text::in('fidelito')
                     )
                 )*/
-            )->setStyle(['background-color'=>'#FFF','padding'=>'10px',])
+            )->setStyle(['background-color'=>'#FFF','padding'=>'100px',])->setClass('text-center')
         )->build();
     };
 

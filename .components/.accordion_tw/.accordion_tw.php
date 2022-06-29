@@ -13,6 +13,7 @@ class accordion_tw{
     private static $instance;
     private $acord = null;
     private $isFlush = array();
+    private $typeac = array();
     private $argumentos;
     private $accordionClase = array('accordion');
     private $acordionFlushclases = 'accordion accordion-flush';
@@ -65,7 +66,7 @@ class accordion_tw{
     }
     public function type(){
         if ( count(func_get_args())>0 ){
-            $this->isFlush = func_get_args()[0];
+            $this->typeac = func_get_args()[0];
         }
         return self::$instance;
     }
@@ -74,7 +75,7 @@ class accordion_tw{
         for($i = self::off ; $i < count($args); ++$i) {
             if (is_object($args[$i])){
                 if( $args[$i]->get_class()===self::acordionItemClassName ){
-                   $b[] = $args[$i]->build($this->isFlush);
+                   $b[] = $args[$i]->build($this->typeac);
                 }else{
                    $b[] = $args[$i]->build();
                 }
@@ -84,15 +85,11 @@ class accordion_tw{
     }
     public function build(){
         $cl = utils::load('css',get_class());
-
         if ($this->isFlush){
             $this->accordionClase = components_tools::searchAndDel($this->accordionClase , array('accordion'));
             array_push($this->accordionClase , $this->acordionFlushclases );
         }
         $this->work($this->argumentos);
-
-
-
         $this->accordionClase = implode(' ', $this->accordionClase);
         return '<style>'.$cl.'</style>
         <div class="p-4">
