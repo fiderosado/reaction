@@ -29,7 +29,17 @@ accordion_tw::in(
 
 	accordion_item_tw::in(
 
-        text::in('<strong>This is the third items accordion body.</strong> It is hidden by default until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'),        
+        		text::in(
+			
+			'<strong>This is the third items accordion body.
+			</strong> It is hidden by default until the collapse plugin adds the 
+			appropriate classes that we use to style each element. These classes
+			control the overall appearance, as well as the showing and hiding via CSS 
+			transitions. You can modify any of this with custom CSS or overriding 
+			our default variables. Its also worth noting that just about any HTML 
+			can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
+			
+			),        
 	
 	button_tw::in('NEXT')->rounded()->block()->setClass('mt-6')->larger()
 
@@ -37,23 +47,33 @@ accordion_tw::in(
 		    
        accordion_item_tw::in(
 
-                        text::in('<strong>This is the third items accordion body.</strong> It is hidden by default,
-        until the collapse plugin adds the appropriate classes that we use to style each
-        element. These classes control the overall appearance, as well as the showing and
-        hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-        our default variables. Its also worth noting that just about any HTML can go within
-        the <code>.accordion-body</code>, though the transition does limit overflow.')
-
-                    )->setNo(2)->setId(2)->setTit('Tema 2')->setFatherId('ac1'),
+                        text::in(
+			
+			'<strong>This is the third items accordion body.</strong> 
+			It is hidden by default, until the collapse plugin adds the 
+			appropriate classes that we use to style each element. These 
+			classes control the overall appearance, as well as the showing and
+			hiding via CSS transitions. You can modify any of this with
+			custom CSS or overriding our default variables. Its also worth 
+			noting that just about any HTML can go within the <code>.accordion-body</code>,
+			though the transition does limit overflow.'
+			
+			)
+	)->setNo(2)->setId(2)->setTit('Tema 2')->setFatherId('ac1'),
 		    
         accordion_item_tw::in(
 
-                        text::in('<strong>This is the third items accordion body.</strong> It is hidden by default,
-        until the collapse plugin adds the appropriate classes that we use to style each
-        element. These classes control the overall appearance, as well as the showing and
-        hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-        our default variables. Its also worth noting that just about any HTML can go within
-        the <code>.accordion-body</code>, though the transition does limit overflow.')
+                        text::in(
+			
+			'<strong>This is the third items accordion body.</strong> 
+			It is hidden by default, until the collapse plugin adds the 
+			appropriate classes that we use to style each element. These classes
+			control the overall appearance, as well as the showing and hiding via CSS 
+			transitions. You can modify any of this with custom CSS or overriding
+			our default variables. Its also worth noting that just about any HTML 
+			can go within the <code>.accordion-body</code>, 
+			though the transition does limit overflow.'
+			)
 
                     )->setNo(3)->setId(3)->setTit('Tema 3')->setFatherId('ac1')
 
