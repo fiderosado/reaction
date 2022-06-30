@@ -6,7 +6,7 @@ class avatar_tw{
     private $id;
     private $type_avatar=array();
     private $image_src='img/2.webp',
-        $image_class=array('rounded-full w-32'),
+        $image_class=array('rounded-full w-32 cursor-pointer'),
         $image_altext,
         $cont=array(),
         $image_text_tit_content='Nombre',
@@ -69,7 +69,7 @@ class avatar_tw{
         }
         if ($this->content){
             // agrego los elementos de titulo descripcion debjo de la imagen
-            $this->cont[] = '<h5 class="text-xl font-medium leading-tight mb-1 mt-4">'.$this->image_text_tit_content.'</h5><p class="texto-gray-500 strong">'.$this->image_text_desc_content.'</p>';
+            $this->cont[] = '<h5 class="text-xl font-medium leading-tight mb-1 b mt-4 cursor-pointer">'.$this->image_text_tit_content.'</h5><p class="texto-gray-500  cursor-pointer">'.$this->image_text_desc_content.'</p>';
         }
         $body = '<div class="text-center inline-block"><img src="'.$this->image_src.'" class="'.implode(' ',$this->image_class).'" alt="'.$this->image_altext.'" />'.implode(' ',$this->cont).'</div>';
         return $body;

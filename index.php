@@ -36,7 +36,7 @@
             head::in($head),
             body::in(
 
-                avatar_tw::in()->type(['squared','shadow','content'])
+                avatar_tw::in()->type(['shadow','content'])
                     ->setTitule('Fidel')
                     ->setDescription('Administrador')
                     ->setImgScr('https://mdbcdn.b-cdn.net/img/new/avatars/8.webp')
