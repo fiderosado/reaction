@@ -21,9 +21,13 @@ class container{
             if (is_object($args[$i])){
                 // var_dump($args[$i]->build());
                 array_push($c , $args[$i]->build() );
+            }elseif (is_string($args[$i])){
+                array_push($c , $args[$i]);
             }
         }
+
         $this->resp = implode('', $c );
+
     }
 
     public function setId($id){

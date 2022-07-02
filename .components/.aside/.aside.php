@@ -8,6 +8,7 @@ class aside{
     private $style=null;
     private $id;
     private $class;
+    private $add;
     private $resp;
     public static $instance;
     public static function in(){
@@ -48,6 +49,16 @@ class aside{
         }
         return $this;
     }
+
+    public function setAdd($add){
+        if (is_array($add)){
+            $this->add = implode(' ',$add );
+        }elseif (is_string($add)){
+            $this->add = $add;
+        }
+        return $this;
+    }
+
     private function getId(){
         return (empty($this->id)) ? '' : ' id="'.$this->id.'"';
     }
@@ -61,7 +72,11 @@ class aside{
     }
 
     public function build(){
-        return ('<aside '.$this->getId().$this->getClass().$this->getStyle().'>'.$this->resp.'</aside >');
+        return ('<aside '.$this->getId().$this->getClass().$this->getStyle().$this->getAdd().'>'.$this->resp.'</aside >');
+    }
+
+    private function getAdd(){
+        return (empty($this->add))? '' : ' '.$this->add.' ';
     }
 
 }

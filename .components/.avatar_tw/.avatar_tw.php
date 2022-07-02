@@ -5,7 +5,7 @@ use utils\components_tools;
 class avatar_tw{
     private $id;
     private $type_avatar=array();
-    private $image_src='img/2.webp',
+    private $image_src='img/1.webp',
         $image_class=array('rounded-full w-32 cursor-pointer'),
         $image_altext,
         $cont=array(),

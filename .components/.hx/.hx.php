@@ -1,17 +1,17 @@
 <?php
 
-namespace components\text;
+namespace components\hx;
 
-class text{
+class hx{
     const off = 0;
     private $style=null;
     private $texto;
     private $id;
+    private $x=1;
     private $class=array();
     public static $instance;
     public static function in(){
-      //  $args = func_get_args(); // var_dump($args);
-        self::$instance = new text(func_get_args());
+        self::$instance = new self(func_get_args());
         return self::$instance;
     }
     public function __construct(){
@@ -20,10 +20,14 @@ class text{
         return self::$instance;
     }
     public function build(){
-       return '<span'.$this->getId().$this->getClass().$this->getStyle().'>'.$this->texto.'</span>';
+       return '<h'.$this->x.$this->getId().$this->getClass().$this->getStyle().'>'.$this->texto.'</h'.$this->x.'>';
     }
     public function setId($id){
         $this->id = $id;
+        return self::$instance;
+    }
+    public function setX($x){
+        $this->x = $x;
         return self::$instance;
     }
     public function setText($d){
