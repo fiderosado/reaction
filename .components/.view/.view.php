@@ -10,6 +10,8 @@ class view{
     private $class;
     private $resp;
     public static $instance;
+    private $forview ;
+
     public static function in(){
         self::$instance = new self(func_get_args());
         return self::$instance;
@@ -25,6 +27,21 @@ class view{
         }
         $this->resp = implode('', $c );
     }
+
+    public function getForview(){
+        return $this->forview;
+    }
+
+    public function forView(){
+        if(func_get_args()>0){
+            if ( !empty(func_get_args()[0]) and !is_null(func_get_args()[0])){
+                $this->forview = func_get_args()[0];
+               // var_dump($this->forview);
+            }
+        }
+        return self::$instance;
+    }
+
     public function build(){
         return ($this->resp);
     }

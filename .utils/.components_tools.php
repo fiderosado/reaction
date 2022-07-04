@@ -2,7 +2,10 @@
 
 namespace utils;
 
+use components\icon\icon;
+
 class components_tools{
+
     public function log($v){
         switch ($v){
             case is_array($v): var_dump($v);
@@ -17,6 +20,7 @@ class components_tools{
                 break;
         }
     }
+
     public function __construct(){}
     public static function searchAndDel($st,$sa=array()){
         $ad = func_get_args();
@@ -42,5 +46,13 @@ class components_tools{
         }
 
         return $are;
+    }
+
+    public static function icon($name , $solid ){
+        if ($solid){
+            return icon::in($name.'-solid');
+        }else{
+            return icon::in($name);
+        }
     }
 }

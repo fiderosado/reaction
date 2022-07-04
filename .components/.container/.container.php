@@ -25,9 +25,7 @@ class container{
                 array_push($c , $args[$i]);
             }
         }
-
         $this->resp = implode('', $c );
-
     }
 
     public function setId($id){

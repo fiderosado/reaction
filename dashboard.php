@@ -40,11 +40,10 @@
             "Font Awesome"=>"css/tailw.2.2.19.min.css"
         ],
         "scripts"=>[
-            "tail.ui.script"=>'<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js" defer></script>'
 
         ]
     ];
-
+/*"tail.ui.script"=>'<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js" defer></script>'*/
     $app = function() use ( $head , $stylesheet ) {
         app::in(
             head::in($head),

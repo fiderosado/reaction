@@ -4,12 +4,10 @@ class bottom_toolbar_showingof_a{
     private $id;
     private static $instance;
     private $max =0 , $step = 1 , $cant = 20;
-
     public function __construct($step , $max){
         $this->step = $step ;
         $this->max = $max;
     }
-
     private function steps(){
         $r = '';
         if ($this->step==1 and ($this->max > $this->cant)){
@@ -23,9 +21,7 @@ class bottom_toolbar_showingof_a{
         if( $this->max < $this->cant ){
             $r = $this->step.'-'.$this->max;
         }
-
         return $r;
-
     }
 
     public static function in($step , $max){

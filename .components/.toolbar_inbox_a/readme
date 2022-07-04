@@ -1,0 +1,41 @@
+$a['star']='<div class="hover:bg-gray-100 cursor-pointer items-center flex flex-row" style="" onclick="#">';
+
+            $a['checkbox-star']='
+            <div class="bg-gray-700 basis-1/4" style="max-width: 122px; ">
+            <!-- space-x-1-->
+            <!---->
+                <div class="block w-full inline-flex items-center" style="">
+                    <div class="p-3 rounded-full hover:bg-white">
+                        <input id="checkbox-1" aria-describedby="checkbox-1" type="checkbox"
+                        class="bg-blue-500 border-gray-300 focus:ring-3 focus:ring-cyan-200 h-4 w-4 rounded" onclick="">
+                        <label for="checkbox-1" class="sr-only">checkbox</label>
+                    </div>
+                    <!---space-x-8 -->
+                    <a href="#" class="hover:text-gray-900 cursor-pointer hover:bg-white rounded-full inline-flex items-center p-2 ">
+                    '.icon::in('star')->setClass(['texto-gray-300 focus:texto-gray-700', $isfav($favorite) ])->build().'
+                    </a>
+                    <a href="#" class="hover:text-gray-900 cursor-pointer hover:bg-white rounded-full inline-flex items-center p-2 ">
+                    '.icon::in('bookmark')->setClass(['texto-gray-300 focus:texto-gray-700', $isfav($favorite) ])->build().'
+                    </a>
+                </div>
+
+            </div>';
+
+            $a['imagen-name'] = '
+            <div class="flex items-center BHrWGjM1Iab_fAz0_91H space-x-4 px-2 bg-blue-200 truncate overflow-hidden basis-1/4" style="">
+                <img class="h-10 w-10 rounded-full" src="'.$image.'" alt="'.$name.'">
+                <div class="text-base capitalize '.$isreaded($readed).'">'.$name.'</div>
+            </div>';
+/*max-w-sm*/
+            $a['short-message']='<div class="text-base EaxKPe33bBy_Ky6mzblq
+            bg-purple-100 truncate overflow-hidden basis-1/2 '.$isreaded($readed).'" style="flex-grow: 2;">'.$short.'</div>';
+
+            $a[]='<div class="BHrWGjM1Iab_fAz0_91H text-base bg-yellow-400 px-4  basis-1/4 '.$isreaded($readed).'" style=" flex-grow: 0;">'.$date.'</div>';
+
+            $a[]='<div class="BHrWGjM1Iab_fAz0_91H text-base  bg-red-100 px-4 items-center basis-1/4 " style=" flex-grow: 0; ">
+                  <a href="#" class="texto-gray-500 hover:text-gray-900 cursor-pointer p-1
+                  hover:bg-gray-100 rounded inline-flex justify-center">
+                  '.icon::in('trash')->build().'</a>
+                  </div>';
+
+            $a['end']='</div>';
